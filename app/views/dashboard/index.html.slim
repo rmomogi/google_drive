@@ -1,0 +1,36 @@
+.content
+  .row
+    .col-md-12
+      .text-right
+        = link_to 'Novo documento', new_document_path, class: 'btn btn-primary btn-sm'
+
+  .row.mt-4
+    .col-md-12
+      table.table.table-hover.table-sm
+        thead
+          tr
+            th 
+              small #
+            th(scope="col") 
+              small Nome
+            th(scope="col") 
+              small Criado em
+            th
+            th
+        tbody
+          - @documents.each do |document|
+            tr
+              td 
+                small = document.id
+              td 
+                small = document.title
+              td 
+                small = I18n.l(document.created_at, format: :long)
+              td
+                small
+                  = link_to 'Editar', edit_document_path(document)
+              th
+                small
+                  = link_to 'Excluir', document_path(document), method: :delete, :remote => true, data: { confirm: "Você tem certeza em remover o documento '#{document.title}'?" }
+
+javascript:

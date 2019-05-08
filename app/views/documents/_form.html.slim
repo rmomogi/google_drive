@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    = form_for(@document, remote: true) do |f|
+      .card
+        .card-header 
+          = f.text_field :title, class: 'title form-control', placeholder: "Título do documento"
+        .card-body
+          .row
+            .col-md-12
+              = f.text_area :content, id: 'editor'
+        .card-footer.text-right
+          = f.submit 'Salvar documento', class: 'btn-primary btn btn-sm', id: 'save_doc', data: { disable_with: "Salvando ..." }
+
+javascript:
+  $(document).ready( function() {
+    $('#editor').summernote({
+      tabsize: 2,
+      height: 300,
+      focus: true
+    });
+  });

@@ -1,0 +1,11 @@
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require toastr
+//= require popper
+//= require bootstrap-sprockets
+//= require sweetalert
+//= require rails-sweetalert2-confirm
+//= require_tree .

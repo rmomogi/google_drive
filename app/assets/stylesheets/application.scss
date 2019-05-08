@@ -1,0 +1,22 @@
+@import 'bootstrap';
+@import 'toastr';
+@import 'summernote-bs4';
+@import 'sweetalert';
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: blue;
+}
+
+#editor {overflow:scroll; max-height:300px}
+
+.title {
+    border: none;
+    background: transparent;
+    outline: none;
+}

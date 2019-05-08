@@ -1,0 +1,6 @@
+<% if (@document.errors.any?) %>
+	swal("Atenção", "<%= @document.errors.full_messages.first %>" , "warning")
+<% else %>
+	swal({ title: "Sucesso", text: "O documento está salvo no Google Drive", type: "success", timer: 2000, showConfirmButton: false },
+			function() { window.location.href = "<%= dashboard_path  %>"; })
+<% end %>

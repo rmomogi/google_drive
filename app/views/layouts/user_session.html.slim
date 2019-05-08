@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title App IDox Dashboard
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  
+  body
+    nav.navbar.navbar-light.bg-dark
+      span.navbar-brand.mb-0.h1.text-white App IDox
+      small.text-white
+        = "#{current_user.name} (#{current_user.email})"
+      small.text-right.text-white
+        = link_to('Logout', destroy_user_session_path, method: :delete, class: 'text-white')
+    .container.mt-4
+      = yield
